@@ -1,0 +1,2 @@
+openssl x509 -inform DER -in 2048b-rsa-example-cert.der -text \
+| sed -n -e '/Modulus:/,/Exponent:/p' | sed -e '1d;$d' | python3 to_decimal.py

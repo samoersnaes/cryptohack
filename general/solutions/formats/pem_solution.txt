@@ -1,0 +1,1 @@
+openssl rsa -in keypair.pem -text | sed -n -e '/privateExponent:/,/prime1:/p' | sed -e '1d;$d' | python3 to_decimal.py
